@@ -40,6 +40,7 @@ $(document).ready(function(){
 var pizza = new Pizza (0,0,[]);
 
   $("#orderForm").submit(function(event){
+    debugger;
     event.preventDefault();
     $("#orderForm").hide();
     $(".panel").show();
@@ -58,8 +59,8 @@ var pizza = new Pizza (0,0,[]);
       $("").append(pizzaTopping + "<br>");
     });
 
-var price = newOrder.calculation(sizeInput, sauceInput, newTopping.price);
-    newOrder.price = cost;
+// var price = newOrder.calculation(sizeInput, sauceInput, newTopping.price);
+//     newOrder.price = cost;
   });
 
 
