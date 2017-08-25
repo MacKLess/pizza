@@ -3,6 +3,11 @@
 // 17 inch = $22.99;
 
 // cost = size + toppings ($2/each)
+//
+// function Topping (type){
+//   this.types = [];
+//   this.price = 2;
+// }
 
 //Business Logic
 function Pizza (round, sauce, toppings){
@@ -11,11 +16,6 @@ function Pizza (round, sauce, toppings){
   this.toppings = [];
   this.cost = 0;
 }
-//
-// function Topping (type){
-//   this.types = [];
-//   this.price = 2;
-// }
 
 Pizza.prototype.calculation = function(round, toppings){
   var cost = 0;
@@ -35,29 +35,30 @@ Pizza.prototype.calculation = function(round, toppings){
 }
 
 
-Pizza.prototype.calculation = function(round, toppings){
-  var price = 0;
-
-}
-
-
-
-
-
 //User Interface Logic
 $(document).ready(function(){
-var Pizza = new Pizza (0,0,[]);
-
+var pizza = new Pizza (0,0,[]);
 
   $("#orderForm").submit(function(event){
     event.preventDefault();
     $("#orderForm").hide();
     $(".panel").show();
+    // $("input:checkbox[name=pizza-round]:checked").each(function(){
+    //   var pizzaRound = $(this).val();
+    //
+    //   $("").append(pizzaRound + "<br>");
+    // });
+    // $("input:checkbox[name=pizza-sauce]:checked").each(function(){
+    //   var   = $(this).val();
+    //   $("").append(  + "<br>");
+    // });
+    $("input:checkbox[name=pizza-topping]:checked").each(function(){
+      var pizzaTopping = $(this).val();
+      pizza.toppings.push(pizzaTopping);
+      $("").append(pizzaTopping + "<br>");
+    });
 
-var price = ()
-
-
-    var cost = newOrder.calculation(sizeInput, sauceInput, newTopping.price);
+var price = newOrder.calculation(sizeInput, sauceInput, newTopping.price);
     newOrder.price = cost;
   });
 
