@@ -3,29 +3,28 @@ function Pizza (round, sauce, toppings){
   this.round = round;
   this.sauce = sauce;
   this.toppings = [];
-  this.cost = 0;
 }
 
-Pizza.prototype.calculation = function(round, toppings){
-  var cost = 0;
-  for (i = 0; toppings.length; i++){
-    cost += 2;
+Pizza.prototype.getCost = function(){
+  var cost = 0.0;
+  for (i = 0; i < this.toppings.length; i++){
+    cost += 2.0;
   }
-  if (round === 9){
-    cost += 14.99;
-  }else if (round === 13){
-    cost += 18.99;
-  }else if(round === 17){
-    cost += 22.99;
+  if (this.round === 9){
+    cost += 14.00;
+  }else if (this.round === 13){
+    cost += 18.00;
+  }else if(this.round === 17){
+    cost += 22.00;
   }else{
     alert ('error');
   }
   return cost;
 }
-Pizza.prototype.translation = function(round){
-  if (round === 9){
+Pizza.prototype.translation = function(){
+  if (this.round === 9){
     return "9 Inch Pizza Round"
-  }else if (round === 13){
+  }else if (this.round === 13){
     return "13 Inch Pizza Round"
   }else{
     return "17 Inch Pizza Round"
@@ -35,13 +34,12 @@ Pizza.prototype.translation = function(round){
 //User Interface Logic
 $(document).ready(function(){
 var pizza = new Pizza (0,0,[]);
-debugger;
+// debugger;
 
   $("#orderForm").submit(function(event){
     event.preventDefault();
     $("#orderForm").hide();
     $(".panel").show();
-
 
     var roundInput = parseInt($("#pizzaRound").val());
       pizza.round = roundInput;
@@ -54,16 +52,14 @@ debugger;
       var pizzaTopping = $(this).val();
       pizza.toppings.push(pizzaTopping);
     });
-    var pizzaSize = pizza.translation(roundInput);
-    $("#orderConfirmation").append(`<li>${pizzaSize}</li>`);
-    $("#orderConfirmation").append(`<li>${sauceInput}</li>`);
+
+    var price = pizza.getCost();
+    var pizzaSize = pizza.translation();
+    $("#orderConfirmation").append(`<li>Pizza Size ==> ${pizzaSize}</li>`);
+    $("#orderConfirmation").append(`<li>Pizza Sauce ==> ${sauceInput}</li>`);
     $("#orderConfirmation").append(`<li>Pizza Toppings:<ul>
       <li>${pizza.toppings.join('</li><li>')}</li>
       </ul>`);
-
-// var price = newOrder.calculation(sizeInput, sauceInput, newTopping.price);
-//     newOrder.price = cost;
+    $("#orderConfirmation").append(`<li>Total Cost ==> $${price}</li>`);
   });
-
-
 });
