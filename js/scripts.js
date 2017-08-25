@@ -65,6 +65,6 @@ var pizza = new Pizza (0,0,[]);
     $("#orderConfirmation").append(`<li>Pizza Toppings:<ul>
       <li>${toppingsList}</li>
       </ul>`);
-    $("#orderConfirmation").append(`<li>Total Cost ==> $${price}</li>`);
+    $("#orderConfirmation").append(`<li id="seePrice">Total Cost ==> $${price}</li>`);
   });
 });

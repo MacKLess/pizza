@@ -13,10 +13,11 @@
     <div class="container">
       <div class="jumbotron">
         <h1>Naked Pizza Parlor</h1>
-        <p>Welcome to the Naked Pizza Parlor! We've stripped down to the dough, now you get to pick what goes on top.</p>
+        <p><em>Hi! We're Naked!</em>
+          <br>Welcome to the Naked Pizza Parlor. We've <em>stripped</em> down to the dough, now you get to pick what goes on top.</p>
       </div>
       <form id="orderForm">
-        <div id="round">
+        <div class="well" id="round">
           <h2>Size Matters</h2>
           <p>Here at the Naked Pizza Parlor, we know that size really does matter. Afterall, no one should bite off more than they can chew. Please select the inches that will best fit your needs.</p>
           <select class="form-group" id="pizzaRound">
@@ -32,9 +33,9 @@
             <option>   Italian Stallion: marinara</option>
           </select>
         </div>
-        <div id="topping" class="form-group">
+        <div class="well" id="topping" class="form-group">
           <h2>Top Us!</h2>
-          <p>Here at the Naked Pizza Parlor, we love to get all dressed up. This is your chance to break out and pick out all the toppings.</p>
+          <p>Here at the Naked Pizza Parlor, we love to get all dressed up. This is your chance to pick out all the toppings.</p>
           <input type="checkbox" name="pizza-topping" value="pepperoni">   pepperoni<br>
           <input type="checkbox" name="pizza-topping" value="chicken">   chicken<br>
           <input type="checkbox" name="pizza-topping" value="sausage">   sausage<br>
@@ -53,8 +54,9 @@
         <button type="submit" name="button">Submit!</button>
       </form>
       <div class="panel panel-default">
-        <div class="panel-heading">Your Submission</div>
+        <div class="panel-heading">Order Confirmation/ Your Submission</div>
         <div class="panel-body">
+          <center><img src="img/200w_d.gif" height="250px"/></center>
           <ol id="orderConfirmation">
 
           </ol>
