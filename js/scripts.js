@@ -54,10 +54,12 @@ debugger;
       var pizzaTopping = $(this).val();
       pizza.toppings.push(pizzaTopping);
     });
-
-    $("#orderConfirmation").append(`<li>${roundInput}</li>`);
+    var pizzaSize = pizza.translation(roundInput);
+    $("#orderConfirmation").append(`<li>${pizzaSize}</li>`);
     $("#orderConfirmation").append(`<li>${sauceInput}</li>`);
-    $("#orderConfirmation").append(`<li>${pizzaTopping}</li>`);
+    $("#orderConfirmation").append(`<li>Pizza Toppings:<ul>
+      <li>${pizza.toppings.join('</li><li>')}</li>
+      </ul>`);
 
 // var price = newOrder.calculation(sizeInput, sauceInput, newTopping.price);
 //     newOrder.price = cost;
