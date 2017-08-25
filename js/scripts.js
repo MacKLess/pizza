@@ -55,10 +55,15 @@ var pizza = new Pizza (0,0,[]);
 
     var price = pizza.getCost();
     var pizzaSize = pizza.translation();
+    var toppingsList = 'none';
+      if (pizza.toppings.length > 0){
+        toppingsList = pizza.toppings.join('</li><li>');
+      }
+
     $("#orderConfirmation").append(`<li>Pizza Size ==> ${pizzaSize}</li>`);
     $("#orderConfirmation").append(`<li>Pizza Sauce ==> ${sauceInput}</li>`);
     $("#orderConfirmation").append(`<li>Pizza Toppings:<ul>
-      <li>${pizza.toppings.join('</li><li>')}</li>
+      <li>${toppingsList}</li>
       </ul>`);
     $("#orderConfirmation").append(`<li>Total Cost ==> $${price}</li>`);
   });
