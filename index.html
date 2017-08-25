@@ -16,19 +16,21 @@
         <p>Welcome to the Naked Pizza Parlor! We've stripped down to the dough, now you get to pick what goes on top.</p>
       </div>
       <form id="orderForm">
-        <div id="round" class="form-group">
+        <div id="round">
           <h2>Size Matters</h2>
           <p>Here at the Naked Pizza Parlor, we know that size really does matter. Afterall, no one should bite off more than they can chew. Please select the inches that will best fit your needs.</p>
-          <input type="checkbox" name="pizza-round" value="nine-inch">   9 Inches!<br>
-          <input type="checkbox" name="pizza-round" value="thirteen-inch">   13 Inches!!<br>
-          <input type="checkbox" name="pizza-round" value="seventeen-inch">   17 Inches!!!<br>
-        </div>
-        <div id="sauce" class="form-group">
+          <select class="form-group" id="pizzaRound">
+            <option value="9">   9 Inches!</option>
+            <option value="13">   13 Inches!!</option>
+            <option value="17">   17 Inches!!!</option>
+          </select>
           <h2>The "Saucy" Question</h2>
           <p>Don't call us sassy, we prefer the term 'saucy.' Tell us all about the type of sauce you prefer to slather.</p>
-          <input type="checkbox" name="pizza-sauce" value="oliveOil">   Mediterranean style: olive oil<br>
-          <input type="checkbox" name="pizza-sauce" value="pesto">   Go Greek: pesto<br>
-          <input type="checkbox" name="pizza-sauce" value="marinara">   Italian Stallion: marinara<br>
+          <select class="form-group" id="pizzaSauce">
+            <option>   Mediterranean style: olive oil</option>
+            <option>   Go Greek: pesto</option>
+            <option>   Italian Stallion: marinara</option>
+          </select>
         </div>
         <div id="topping" class="form-group">
           <h2>Top Us!</h2>
